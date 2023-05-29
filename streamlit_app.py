@@ -16,12 +16,13 @@ def main():
     # Az adatbevitel formázása
     input_data = st.text_input('Adatok')
 
-    if st.button('Predikció'):
-        # Hívja meg a model predict függvényét az input adatokkal
-        accuracy = get_accuracy(model)
+    if st.button('Pontosság kiírása'):
+        # Hívja meg a model score függvényét az X_test és Y_test adatokkal
+        accuracy = model.score(X_test, Y_test)
 
-        # Jelenítse meg a predikciót
-        st.write('Predikció:', accuracy)
+        # Jelenítse meg a pontosságot
+        st.write('Model pontossága:', accuracy)
 
 if __name__ == '__main__':
     main()
+
