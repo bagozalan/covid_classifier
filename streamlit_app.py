@@ -14,15 +14,18 @@ from covid_classifier import X_test, Y_test
 def main():
     st.title('Random Forest Webalkalmazás')
 
-    # Az adatbevitel formázása
-    input_data = st.text_input('Adatok')
+
 
     if st.button('Pontosság kiírása'):
         # Hívja meg a model score függvényét az X_test és Y_test adatokkal
         accuracy = model.score(X_test, Y_test)
+        accuracy2 = model2.score(X_test, Y_test)
+        accuracy3 = model3.score(X_test, Y_test)
 
         # Jelenítse meg a pontosságot
-        st.write('Model pontossága:', accuracy)
+        st.write('RandomForest pontossága:', accuracy)
+        st.write('DecisionTreeClassifier pontossága:', accuracy)
+        st.write('BaggingClassifier pontossága:', accuracy)
 
 if __name__ == '__main__':
     main()
