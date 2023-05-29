@@ -17,8 +17,8 @@ def main():
     input_data = st.text_input('Adatok')
 
     if st.button('Predikció'):
-        # Hívja meg a random forest modellező modult a predikcióval
-        prediction = your_random_forest_module.predict(input_data)
+        # Hívja meg a model predict függvényét az input adatokkal
+        prediction = model.predict([input_data])
 
         # Jelenítse meg a predikciót
         st.write('Predikció:', prediction)
