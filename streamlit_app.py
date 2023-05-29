@@ -24,8 +24,8 @@ def main():
 
         # Jelenítse meg a pontosságot
         st.write('RandomForest pontossága:', accuracy)
-        st.write('DecisionTreeClassifier pontossága:', accuracy)
-        st.write('BaggingClassifier pontossága:', accuracy)
+        st.write('DecisionTreeClassifier pontossága:', accuracy2)
+        st.write('BaggingClassifier pontossága:', accuracy3)
 
 if __name__ == '__main__':
     main()
