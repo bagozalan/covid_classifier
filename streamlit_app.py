@@ -16,7 +16,13 @@ from mlxtend.plotting import plot_confusion_matrix
 def main():
     st.title('Random Forest Webalkalmazás')
 
+    if st.button('Confusion Matrix megjelenítése'):
+        # Confusion matrix létrehozása
+        cm = confusion_matrix(Y_test, model.predict(X_test))
 
+        # Confusion matrix megjelenítése
+        fig, ax = plot_confusion_matrix(conf_mat=cm)
+        st.pyplot(fig)
 
     if st.button('Pontosság kiírása'):
         # Hívja meg a model score függvényét az X_test és Y_test adatokkal
