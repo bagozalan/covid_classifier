@@ -9,14 +9,9 @@ Original file is located at
 
 import pandas as pd
 import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-import plotly.express as px
 data=pd.read_csv('Covid Data.csv')
-data
 data.info()
 df=data.copy()
-df
 
 df.hist(bins = 10 , figsize= (14,14))
 plt.show()
@@ -125,15 +120,6 @@ from sklearn.datasets import make_classification
 model = RandomForestClassifier(n_estimators=100, random_state=69, max_features=3)
 model.fit(X_train, Y_train)
 print('Pontosság:',model.score(X_test, Y_test))
-type(Y_test)
-
-type(Y_test)
-
-from sklearn.metrics import confusion_matrix , classification_report
-from mlxtend.plotting import plot_confusion_matrix
-v = confusion_matrix(Y_test , model.predict(X_test))
-
-plot_confusion_matrix(v)
 
 from sklearn.tree import DecisionTreeClassifier
 model2 = DecisionTreeClassifier(criterion = 'entropy',max_depth=3, random_state = 69)
