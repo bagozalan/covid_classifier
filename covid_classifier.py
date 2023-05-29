@@ -9,11 +9,17 @@ Original file is located at
 
 import pandas as pd
 import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+import plotly.express as px
 data=pd.read_csv('Covid Data.csv')
 data
 data.info()
 df=data.copy()
 df
+
+df.hist(bins = 10 , figsize= (14,14))
+plt.show()
 
 df['DATE_DIED'].value_counts()
 
