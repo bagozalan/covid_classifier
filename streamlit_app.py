@@ -10,6 +10,8 @@ Original file is located at
 import streamlit as st
 from covid_classifier import model,model2,model3
 from covid_classifier import X_test, Y_test
+from sklearn.metrics import confusion_matrix, classification_report
+from mlxtend.plotting import plot_confusion_matrix
 
 def main():
     st.title('Random Forest Webalkalmazás')
