@@ -104,12 +104,8 @@ df.isnull().sum()
 x=df.drop('DATE_DIED',axis=1).values
 y=df['DATE_DIED'].values
 
-from imblearn.under_sampling import RandomUnderSampler
-X_under, y_under = RandomUnderSampler().fit_resample(x,y)
-print(X_under.shape, y_under.shape)
-
 from sklearn.model_selection import train_test_split
-X_train , X_test , Y_train , Y_test = train_test_split(X_under, y_under , test_size=0.2, random_state=42)
+X_train , X_test , Y_train , Y_test = train_test_split(x, y , test_size=0.2, random_state=42)
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import make_classification
