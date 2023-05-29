@@ -18,10 +18,10 @@ def main():
 
     if st.button('Predikció'):
         # Hívja meg a model predict függvényét az input adatokkal
-        prediction = model.predict([input_data])
+        accuracy = get_accuracy(model)
 
         # Jelenítse meg a predikciót
-        st.write('Predikció:', prediction)
+        st.write('Predikció:', accuracy)
 
 if __name__ == '__main__':
     main()
