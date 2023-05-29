@@ -13,9 +13,6 @@ data=pd.read_csv('Covid Data.csv')
 data.info()
 df=data.copy()
 
-df.hist(bins = 10 , figsize= (14,14))
-plt.show()
-
 df['DATE_DIED'].value_counts()
 
 df.DATE_DIED[df['DATE_DIED'] != '9999-99-99'] = 1
