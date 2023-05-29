@@ -9,6 +9,7 @@ Original file is located at
 
 import streamlit as st
 from covid_classifier import model
+from covid_classifier import X_test, Y_test
 
 def main():
     st.title('Random Forest Webalkalmazás')
