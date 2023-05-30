@@ -14,7 +14,7 @@ from sklearn.metrics import confusion_matrix, classification_report
 from mlxtend.plotting import plot_confusion_matrix
 
 def main():
-    st.title('Random Forest Webalkalmazás')
+    st.title('Covid death prediction Webalkalmazás')
 
     if st.button('Confusion Matrix megjelenítése'):
         # Confusion matrix létrehozása
