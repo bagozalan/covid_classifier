@@ -16,24 +16,37 @@ from mlxtend.plotting import plot_confusion_matrix
 def main():
     st.title('Covid death prediction Webalkalmazás')
 
-    if st.button('Confusion Matrix megjelenítése'):
+    if st.button('Random Forest'):
         # Confusion matrix létrehozása
         cm = confusion_matrix(Y_test, model.predict(X_test))
 
         # Confusion matrix megjelenítése
         fig, ax = plot_confusion_matrix(conf_mat=cm)
         st.pyplot(fig)
-
-    if st.button('Pontosság kiírása'):
-        # Hívja meg a model score függvényét az X_test és Y_test adatokkal
         accuracy = model.score(X_test, Y_test)
-        accuracy2 = model2.score(X_test, Y_test)
-        accuracy3 = model3.score(X_test, Y_test)
-
-        # Jelenítse meg a pontosságot
         st.write('RandomForest pontossága:', accuracy)
+    if st.button('DecisionTreeClassifier'):
+        # Confusion matrix létrehozása
+        cm = confusion_matrix(Y_test, model2.predict(X_test))
+
+        # Confusion matrix megjelenítése
+        fig, ax = plot_confusion_matrix(conf_mat=cm)
+        st.pyplot(fig)
+        accuracy2 = model2.score(X_test, Y_test)
         st.write('DecisionTreeClassifier pontossága:', accuracy2)
+     if st.button('BaggingClassifier'):
+        # Confusion matrix létrehozása
+        cm = confusion_matrix(Y_test, model3.predict(X_test))
+
+        # Confusion matrix megjelenítése
+        fig, ax = plot_confusion_matrix(conf_mat=cm)
+        st.pyplot(fig)
+        accuracy3 = model3.score(X_test, Y_test)
         st.write('BaggingClassifier pontossága:', accuracy3)
+
+    
+
+
 
 if __name__ == '__main__':
     main()
