@@ -16,9 +16,10 @@ def main():
         st.pyplot(fig)
 
 
-
+        recall = recall_score(Y_test, model.predict(X_test), pos_label=1)
         accuracy = model.score(X_test, Y_test)
-        st.write('RandomForest pontossága:', accuracy)
+        st.write('RandomForest score:', accuracy)
+        st.write('RandomForest recall:', recall)
     
     if st.button('DecisionTreeClassifier'):
         # Confusion matrix létrehozása
@@ -29,10 +30,12 @@ def main():
         st.pyplot(fig)
 
 
-
+        recall2 = recall_score(Y_test, model2.predict(X_test), pos_label=1)
+       
 
         accuracy2 = model2.score(X_test, Y_test)
-        st.write('DecisionTreeClassifier pontossága:', accuracy2)
+        st.write('DecisionTreeClassifier score:', accuracy2)
+        st.write('DecisionTreeClassifier recall:', recall2)
     
     if st.button('BaggingClassifier'):
         # Confusion matrix létrehozása
@@ -45,9 +48,10 @@ def main():
         # Classification report létrehozása
         
 
-
+        recall3 = recall_score(Y_test, model3.predict(X_test), pos_label=1)
         accuracy3 = model3.score(X_test, Y_test)
-        st.write('BaggingClassifier pontossága:', accuracy3)
+        st.write('BaggingClassifier score:', accuracy3)
+        st.write('DecisionTreeClassifier recall:', recall3)
 
 
 if __name__ == '__main__':
