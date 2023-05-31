@@ -17,8 +17,10 @@ def main():
 
         # Classification report létrehozása
         report = classification_report(Y_test, model.predict(X_test))
-        st.text('Classification Report:')
-        st.text(report)
+        precision = report['1']['precision']
+        recall = report['1']['recall']
+        st.write('RandomForest precision:', precision)
+        st.write('RandomForest recall:', recall)
 
         accuracy = model.score(X_test, Y_test)
         st.write('RandomForest pontossága:', accuracy)
@@ -33,8 +35,10 @@ def main():
 
         # Classification report létrehozása
         report2 = classification_report(Y_test, model2.predict(X_test))
-        st.text('Classification Report:')
-        st.text(report2)
+        precision = report2['1']['precision']
+        recall = report2['1']['recall']
+        st.write('DecisionTreeClassifier precision:', precision)
+        st.write('DecisionTreeClassifier recall:', recall)
 
         accuracy2 = model2.score(X_test, Y_test)
         st.write('DecisionTreeClassifier pontossága:', accuracy2)
@@ -49,8 +53,10 @@ def main():
 
         # Classification report létrehozása
         report3 = classification_report(Y_test, model3.predict(X_test))
-        st.text('Classification Report:')
-        st.text(report3)
+        precision = report3['1']['precision']
+        recall = report3['1']['recall']
+        st.write('BaggingClassifier precision:', precision)
+        st.write('BaggingClassifier recall:', recall)
 
         accuracy3 = model3.score(X_test, Y_test)
         st.write('BaggingClassifier pontossága:', accuracy3)
